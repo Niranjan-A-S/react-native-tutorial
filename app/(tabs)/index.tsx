@@ -1,11 +1,14 @@
-import { Link } from "expo-router"
-import React from "react"
-import { StyleSheet, Text, View } from "react-native"
+import { ImageViewer } from '@/components/ImageViewer';
+import React from "react";
+import { StyleSheet, View } from "react-native";
+
+const PlaceHolderImage = require('@/assets/images/background-image.png');
 
 const HomePage = () => {
     return <View style={styles.container}>
-        <Text style={styles.text}>Home Screen</Text>
-        <Link style={styles.link} href='/about'>Go to about screen</Link>
+        <View style={styles.imageContainer}>
+            <ImageViewer source={PlaceHolderImage} />
+        </View>
     </View>
 }
 
@@ -13,17 +16,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#25292e',
-        justifyContent: 'center',
         alignItems: 'center',
     },
-    text: {
-        color: '#fff',
-    },
-    link: {
-        fontSize: 20,
-        textDecorationLine: 'underline',
-        color: '#fff',
+    imageContainer: {
+        flex: 1,
     }
-})
+});
 
 export default HomePage;
