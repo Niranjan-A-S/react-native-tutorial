@@ -9,6 +9,7 @@ import { ImageSource } from "expo-image";
 import * as ImagePicker from "expo-image-picker";
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 const PlaceHolderImage = require("@/assets/images/background-image.png");
 
@@ -55,7 +56,7 @@ const HomePage = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <GestureHandlerRootView style={styles.container}>
       <View style={styles.imageContainer}>
         <ImageViewer source={PlaceHolderImage} selectedImage={selectedImage} />
         {pickedEmoji && <EmojiSticker imageSize={40} stickerSource={pickedEmoji} />}
@@ -89,7 +90,7 @@ const HomePage = () => {
       <EmojiPicker isVisible={showModal} onClose={onModalClose}>
         <EmojiList onSelect={onSelectEmoji}></EmojiList>
       </EmojiPicker>
-    </View>
+    </GestureHandlerRootView>
   );
 };
 
